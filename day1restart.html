@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>day1</title>
+      <style>
+        .done{
+            text-decoration: line-through;
+        }
+        body{
+            background-color: bisque;
+        }
+      </style>
+  
+            
+            
+<body>
+<h1>to do list</h1>
+<input type="text" id="task" placeholder="enter task">
+<button onclick="add()">add</button>
+<ul id="taskList"></ul>
+ 
+   <script>
+    function add(){
+    let val=document.getElementById("task").value;
+
+    let li=document.createElement("li");
+    let span=document.createElement("span");
+    span.innerHTML=val;
+    span.className="val";
+    span.onclick=function() {
+        span.classList.toggle("done");
+    }
+    let del=document.createElement("button");
+    del.innerHTML="delete";del.onclick=function(){
+        li.remove();
+    }
+   li.appendChild(span);
+   li.appendChild(del);
+
+    document.getElementById("taskList").appendChild(li);
+ document.getElementById("task").value="";
+    }
+   </script>
+  
+          
+
+
+    </body>
+</html>
